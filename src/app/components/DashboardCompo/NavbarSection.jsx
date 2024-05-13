@@ -12,6 +12,7 @@ import { AiFillContainer } from "react-icons/ai";
 import { FaUser } from "react-icons/fa";
 import { PiTrashSimpleFill } from "react-icons/pi";
 import { IoTriangle } from "react-icons/io5";
+import { RiArrowDropDownLine } from "react-icons/ri";
 
 const NavbarSection = () => {
         const[Section1, setSection1] =useState(true)
@@ -19,6 +20,10 @@ const NavbarSection = () => {
         const[Section3, setSection3] =useState(false)
         const[Section4, setSection4] =useState(false)
         const[Section5, setSection5] =useState(false)
+        const[Drop, setDrop] = useState(false)
+        const[Color, setColor] = useState(true)
+        const[Color2, setColor2] = useState(false)
+        const[Color3, setColor3] = useState(false)
 
       const showSection1 = () => {
         setSection1(true)
@@ -58,6 +63,28 @@ const NavbarSection = () => {
         setSection3(false)
         setSection4(false)
         setSection5(true)
+      }
+
+      const showDrop = () => {
+        setDrop(!Drop)
+      } 
+
+      const showColor = () => {
+        setColor(true)
+        setColor2(false)
+        setColor3(false)
+      } 
+
+       const showColor2 = () => {
+        setColor(false)
+        setColor2(true)
+        setColor3(false)
+      }
+
+       const showColor3 = () => {
+        setColor(false)
+        setColor2(false)
+        setColor3(true)
       }
 
   return (
@@ -120,36 +147,75 @@ const NavbarSection = () => {
           
       </section>
 
-      <section>
-        <div className='pt-8 px-2 md:px-8 lg:mx-8 flex flex-row '>
-              <div className='flex gap-8 bg-slate-200 py-4 px-4 rounded-lg shadow-xl '>
-                  <p className='text-2xl md:p-4 p-3 text-white bg-blue-800 rounded-full mb-2'><IoTriangle/> </p>
-                  <div>
-                  <h1 className='text-lg'>Total Students</h1>
-                  <h1 className='text-4xl font-bold'>0</h1>
-                  </div>
+      {Section1===true ? ( <section className='px-2 md:px-8 lg:mx-2 relative'>
+              <div className='hidden lg:block pt-8'>
+                    <div className='grid grid-cols-2 pb-8 gap-4'>
+                        <div className='flex gap-8 bg-white-200 py-6 px-8 rounded-lg shadow-xl '>
+                        <p className='text-2xl md:p-4 p-3 text-white bg-blue-800 rounded-full mb-2'><IoTriangle/> </p>
+                        <div>
+                        <h1 className='text-lg'>Total Students</h1>
+                        <h1 className='text-4xl font-bold'>0</h1>
+                        </div>
+                    </div>
+                    <div className='flex gap-8 bg-white-200 py-6 px-8 rounded-lg shadow-xl '>
+                        <p className='text-2xl md:p-4 p-3 text-white bg-blue-800 rounded-full mb-2'><IoTriangle/> </p>
+                        <div>
+                        <h1 className='text-lg'>Total Students</h1>
+                        <h1 className='text-4xl font-bold'>0</h1>
+                        </div>
+                    </div>
+                    </div>
+                    <div className='flex gap-8 bg-white-200 py-6 px-8 rounded-lg shadow-xl '>
+                        <p className='text-2xl md:p-4 p-3 text-white bg-blue-800 rounded-full mb-2'><IoTriangle/> </p>
+                        <div>
+                        <h1 className='text-lg'>Total Students</h1>
+                        <h1 className='text-4xl font-bold'>0</h1>
+                        </div>
+                    </div>
               </div>
-              <div className='flex gap-8 bg-slate-200 py-4 px-4 rounded-lg shadow-xl '>
-                  <p className='text-2xl md:p-4 p-3 text-white bg-blue-800 rounded-full mb-2'><IoTriangle/> </p>
-                  <div>
-                  <h1 className='text-lg'>Total Students</h1>
-                  <h1 className='text-4xl font-bold'>0</h1>
-                  </div>
+
+              <div className='flex items-center lg:mt-8 pt-8 pb-44'>
+                <p className='font-semibold text-xl'>Recent Classes</p>
+                <p onClick={showDrop} className='ml-auto flex items-center gap-12 shadow-md px-4 py-2 rounded-lg'>Classes <RiArrowDropDownLine/> </p>
               </div>
-              <div className='flex gap-8 bg-slate-200 py-4 px-4 rounded-lg shadow-xl '>
-                  <p className='text-2xl md:p-4 p-3 text-white bg-blue-800 rounded-full mb-2'><IoTriangle/> </p>
-                  <div>
-                  <h1 className='text-lg'>Total Students</h1>
-                  <h1 className='text-4xl font-bold'>0</h1>
-                  </div>
-              </div>
-        </div>
-      
-      
-      </section>
+
+              {Drop===false ? '' : <div className='flex flex-col absolute bottom-4 right-0 text-lg font-semibold bg-white-200 rounded-lg'>
+                <p onClick={showColor} className=  {Color===true ? ('pl-12 pr-20 py-3 bg-sky-200 text-center') : ('pl-8 pr-20 py-3  text-center')} > Classes </p>
+                <p onClick={showColor2} className=  {Color2===false ? ('pl-8 pr-20 py-3 text-center') : ('pl-12 pr-20 py-3 bg-sky-200 text-center')}> Ebooks </p>
+                <p onClick={showColor3} className=  {Color3===false ? ('pl-8 pr-20 py-3 text-center') : ('pl-12 pr-20 py-3 bg-sky-200 text-center')}>Courses</p>
+              </div>}
+            
+      </section>) : '' }
+
+    {Section2===true ? <section className='px-2 md:px-8 lg:mx-2 relative'>
+         <div className='flex items-center lg:mt-8 pt-8 pb-44'>
+                <p className='font-semibold text-xl'>My Content</p>
+                <p onClick={showDrop} className='ml-auto flex items-center gap-12 shadow-md px-4 py-2 rounded-lg'>Classes <RiArrowDropDownLine/> </p>
+         </div>
+
+      </section>: ''}
+
+      {Section3===true ? <section className='px-2 md:px-8 lg:mx-2 relative'>
+         <div className='flex items-center lg:mt-8 pt-8 pb-4'>
+                <p className='font-semibold text-xl'>Class recordings</p>
+                <p onClick={showDrop} className='ml-auto flex items-center gap-12 shadow-md px-4 py-2 rounded-lg'> <RiArrowDropDownLine/> </p>
+          </div>
 
 
 
+      </section>: ''}
+
+
+            {Section4===true ? <section className='px-2 md:px-8 lg:mx-2 relative'>
+                  <div className='lg:mt-8 pt-8 pb-4'>
+                        <p className='font-semibold text-xl'>Resource library</p>
+                  </div>
+                        
+                  <div className='flex items-center'>
+                        <p onClick={showDrop} className='shadow-md pl-44 text-xl pr-6 py-4 boder-solid border rounded-lg'> <RiArrowDropDownLine/> </p>
+                          <button className='ml-auto px-6 py-2 bg-blue-700 text-white cursor-pointer rounded-lg'> Upoad Link </button>
+                  </div>         
+            </section>: ''}
 
     </div>
   )
