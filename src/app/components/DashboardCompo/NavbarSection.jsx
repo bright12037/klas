@@ -13,6 +13,7 @@ import { FaUser } from "react-icons/fa";
 import { PiTrashSimpleFill } from "react-icons/pi";
 import { IoTriangle } from "react-icons/io5";
 import { RiArrowDropDownLine } from "react-icons/ri";
+import { FaAngleRight } from "react-icons/fa6";
 
 const NavbarSection = () => {
         const[Section1, setSection1] =useState(true)
@@ -88,7 +89,7 @@ const NavbarSection = () => {
       }
 
   return (
-    <div className='font-dmsans'>
+    <div className='font-dmsans'> 
       <nav className='hidden lg:mx-8 lg:flex lg:text-white lg:font-bold lg:text-sm lg:my-8'>
           <div className='flex items-center'>
             <Image className='h-16 w-16' src={logo} />
@@ -107,7 +108,7 @@ const NavbarSection = () => {
           <h1 className='hidden lg:block lg:text-4xl lg:font-semibold lg:text-center lg:font-sans'>What will you teach today?</h1>
           <p className='text-center text-black md:my-6 md:block flex items-center gap-2 justify-center mt-8'><input className='md:pr-96 md:pl-3 md:py-2 py-2 pl-6 rounded-lg' type="text" placeholder='Search for your content' /> <Image className='md:hidden rounded-full h-10 w-10' src={profile} /></p>
         </div>
-        <div className='flex justify-center md:gap-24 gap-2 py-6 '>
+        <div className='flex justify-between md:justify-center md:gap-24 gap py-6 mx-2 '>
             <div onClick={showSection1} className='flex flex-col items-center cursor-pointer relative'>
               <p className={Section1===true ? 'text-2xl md:p-4 p-3 bg-slate-400 text-blue-800 rounded-full mb-2': 'text-2xl md:p-4 p-3 bg-white text-blue-800 rounded-full mb-2'}><BiSolidHomeCircle /></p>
               <p className='font-sans text-sm font-normal'>Home</p>
@@ -164,7 +165,7 @@ const NavbarSection = () => {
                         <h1 className='text-4xl font-bold'>0</h1>
                         </div>
                     </div>
-                    </div>
+                   </div>
                     <div className='flex gap-8 bg-white-200 py-6 px-8 rounded-lg shadow-xl '>
                         <p className='text-2xl md:p-4 p-3 text-white bg-blue-800 rounded-full mb-2'><IoTriangle/> </p>
                         <div>
@@ -184,38 +185,55 @@ const NavbarSection = () => {
                 <p onClick={showColor2} className=  {Color2===false ? ('pl-8 pr-20 py-3 text-center') : ('pl-12 pr-20 py-3 bg-sky-200 text-center')}> Ebooks </p>
                 <p onClick={showColor3} className=  {Color3===false ? ('pl-8 pr-20 py-3 text-center') : ('pl-12 pr-20 py-3 bg-sky-200 text-center')}>Courses</p>
               </div>}
-            
-      </section>) : '' }
+              </section>) : '' }
 
-    {Section2===true ? <section className='px-2 md:px-8 lg:mx-2 relative'>
-         <div className='flex items-center lg:mt-8 pt-8 pb-44'>
-                <p className='font-semibold text-xl'>My Content</p>
-                <p onClick={showDrop} className='ml-auto flex items-center gap-12 shadow-md px-4 py-2 rounded-lg'>Classes <RiArrowDropDownLine/> </p>
-         </div>
+            {Section2===true ? <section className='px-2 md:px-8 lg:mx-2 relative'>
+                <div className='flex items-center lg:mt-8 pt-8 pb-44'>
+                        <p className='font-semibold text-xl'>My Content</p>
+                        <p onClick={showDrop} className='ml-auto flex items-center gap-12 shadow-md px-4 py-2 rounded-lg'>Classes <RiArrowDropDownLine/> </p>
+                </div>
 
-      </section>: ''}
+              </section>: ''}
 
-      {Section3===true ? <section className='px-2 md:px-8 lg:mx-2 relative'>
-         <div className='flex items-center lg:mt-8 pt-8 pb-4'>
-                <p className='font-semibold text-xl'>Class recordings</p>
-                <p onClick={showDrop} className='ml-auto flex items-center gap-12 shadow-md px-4 py-2 rounded-lg'> <RiArrowDropDownLine/> </p>
-          </div>
-
-
-
-      </section>: ''}
-
-
-            {Section4===true ? <section className='px-2 md:px-8 lg:mx-2 relative'>
-                  <div className='lg:mt-8 pt-8 pb-4'>
-                        <p className='font-semibold text-xl'>Resource library</p>
+              {Section3===true ? <section className='px-6 md:px-8 lg:mx-2 relative'>
+                <div className='flex items-center lg:mt-8 pt-12 pb-4'>
+                        <p className='font-semibold md:text-xl text-lg'>Class recordings</p>
+                        <p onClick={showDrop} className='ml-auto shadow-md md:pl-44 pl-16 text-xl md:pr-6 pr-2 md:py-4 py-4 boder-solid border rounded-lg'> <RiArrowDropDownLine/> </p>
                   </div>
-                        
-                  <div className='flex items-center'>
-                        <p onClick={showDrop} className='shadow-md pl-44 text-xl pr-6 py-4 boder-solid border rounded-lg'> <RiArrowDropDownLine/> </p>
-                          <button className='ml-auto px-6 py-2 bg-blue-700 text-white cursor-pointer rounded-lg'> Upoad Link </button>
-                  </div>         
-            </section>: ''}
+
+
+
+              </section>: ''}
+
+
+             {Section4===true ? <section className='px-6 md:px-8 lg:mx-2 relative'>
+                          <div className='lg:mt-8 pt-12 pb-4'>
+                                <p className='font-semibold text-xl '>Resource library</p>
+                          </div>
+                                
+                          <div className='flex items-center'>
+                                <p onClick={showDrop} className='shadow-md md:pl-44 pl-24 text-xl md:pr-6 pr-2 md:py-4 md:py-2 py-4 boder-solid border rounded-lg'> <RiArrowDropDownLine/> </p>
+                                  <button className='ml-auto px-6 md:py-2 py-4 bg-blue-700 text-white cursor-pointer rounded-lg'> Upoad Link </button>
+                          </div>         
+             </section>: ''}
+
+
+            {Section5===true ? <section className='grid md:grid-cols-5 py-16 md:mx-8 mx-2'>
+
+                <div  className=' md:col-span-1 flex gap-4 pb-8 px-4 border-b border-solid border-gray-2'>
+                    <Image className='rounded-full h-10 w-10' src={profile} alt='user image'/>
+                    <div className=''>
+                    <p className='font-semibold text-md'>Bright Igwe</p>
+                     <p className='text-slate-600 text-sm font-sans'>topkidz02@gmail.com</p>
+                    </div>
+                </div>
+
+                <div className=' hidden md:block md:col-span-4 border-l border-solid border-gray-4 px-6'>
+                    <div >
+                      <h1 className='flex items-center text-blue-800 text-xl font-semibold'> <span className='mr-6'><FaAngleRight/> </span> Your Profile</h1>
+                    </div>
+                </div>
+            </section> : ''}
 
     </div>
   )
