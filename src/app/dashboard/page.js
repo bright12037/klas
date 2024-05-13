@@ -1,9 +1,10 @@
 import React from 'react'
+import NavbarSection from '../components/DashboardCompo/NavbarSection' 
 
 const page = () => {
   return (
     <div>
-      <h1>dashboard</h1>
+      <NavbarSection />
     </div>
   )
 }
