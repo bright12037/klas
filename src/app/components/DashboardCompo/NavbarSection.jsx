@@ -283,7 +283,7 @@ const NavbarSection = () => {
                 </div> : ''}
                 </section> : ''}
 
-                {Bank===true ? <div >
+                {Bank===false ? <div >
                       <h1 className='flex items-center text-blue-700 text-xl font-semibold'> <span className='mr-6'><FaAngleRight/> </span> Your Bank Details</h1>
                 </div> : ''}
 
