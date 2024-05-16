@@ -30,6 +30,7 @@ const NavbarSection = () => {
         const[Color2, setColor2] = useState(false)
         const[Color3, setColor3] = useState(false)
         const[Bank, setBank] = useState(false)
+        const[Profile, setProfile] = useState(true)
 
       const showSection1 = () => {
         setSection1(true)
@@ -93,10 +94,15 @@ const NavbarSection = () => {
         setColor3(true)
       }
 
+      const showProfile = () => {
+        setBank(false)
+        setProfile(true)
+      }
       const showBank = () => {
         setBank(true)
-       
+        setProfile(false)
       }
+
 
   return (
     <div className='font-dmsans'> 
@@ -240,13 +246,13 @@ const NavbarSection = () => {
                       </div>
 
                       <div className='py-10'>
-                        <p onClick={showSection5} className={Section5===true ? ('flex items-center gap-6 text-blue-800 text-md font-sans pb-6') : ('flex items-center gap-6 text-md font-sans pb-6')}> <span className='text-2xl'>< CiUser/></span> Your Profile</p>
+                        <p onClick={showProfile} className={Profile===true ? ('flex items-center gap-6 text-blue-800 text-md font-sans pb-6') : ('flex items-center gap-6 text-md font-sans pb-6')}> <span className='text-2xl'>< CiUser/></span> Your Profile</p>
                         <p onClick={showBank} className={Bank===true ? ('flex items-center gap-6 text-md text-blue-800 font-sans') : ('flex items-center gap-6 text-md font-sans')} >  <span className='text-2xl'>< CiBank/></span> Bank Details</p>
                         <p className='flex items-center gap-6 text-md font-sans pt-44'> <span className='text-2xl'><IoIosLogOut/></span>Log-out</p>
                       </div>
                 </div>
 
-                {Section5===true ? <div className=' hidden md:block md:col-span-4 border-l border-solid border-gray-4 px-6'>
+                {Profile ===true ? <div className=' hidden md:block md:col-span-4 border-l border-solid border-gray-4 px-6'>
                     <div >
                       <h1 className='flex items-center text-blue-700 text-xl font-semibold'> <span className='mr-6'><FaAngleRight/> </span> Your Profile</h1>
                     </div>
