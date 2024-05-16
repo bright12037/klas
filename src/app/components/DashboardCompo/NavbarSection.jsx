@@ -14,6 +14,10 @@ import { PiTrashSimpleFill } from "react-icons/pi";
 import { IoTriangle } from "react-icons/io5";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { FaAngleRight } from "react-icons/fa6";
+import { IoCameraOutline } from "react-icons/io5"; 
+import { CiBank } from "react-icons/ci";
+import { CiUser } from "react-icons/ci";
+import { IoIosLogOut } from "react-icons/io";
 
 const NavbarSection = () => {
         const[Section1, setSection1] =useState(true)
@@ -25,6 +29,7 @@ const NavbarSection = () => {
         const[Color, setColor] = useState(true)
         const[Color2, setColor2] = useState(false)
         const[Color3, setColor3] = useState(false)
+        const[Bank, setBank] = useState(false)
 
       const showSection1 = () => {
         setSection1(true)
@@ -88,22 +93,27 @@ const NavbarSection = () => {
         setColor3(true)
       }
 
+      const showBank = () => {
+        setBank(true)
+       
+      }
+
   return (
     <div className='font-dmsans'> 
       <nav className='hidden lg:mx-8 lg:flex lg:text-white lg:font-bold lg:text-sm lg:my-8'>
           <div className='flex items-center'>
             <Image className='h-16 w-16' src={logo} />
-            <h1 className='text-blue-600 text-3xl'>Klas</h1>
+            <h1 className='text-blue-700 text-3xl'>Klas</h1>
           </div>
           <div className='ml-auto flex items-center gap-4'>
-            <p className='text-blue-600 boder-solid border py-3 px-8 rounded-lg border-blue-500'>Try Pro</p>
-            <p className='px-10 py-3 bg-blue-600 rounded-lg font-sans'>Create a content</p>
+            <p className='text-blue-700 boder-solid border py-3 px-8 rounded-lg border-blue-700'>Try Pro</p>
+            <p className='px-10 py-3  bg-gradient-to-r from-purple-600 via-blue-700 to-blue-700 rounded-lg font-sans'>Create a content</p>
             <Image className='rounded-full h-10 w-10' src={profile} />
           </div>
       </nav>
 
 
-      <section className='pt-1 px-2 md:px-8 lg:mx-8 rounded-lg font-dmsans bg-blue-600 text-white md:pt-12  '>
+      <section className='pt-1 px-2 md:px-8 lg:mx-8 rounded-lg font-dmsans bg-gradient-to-r from-purple-600 via-blue-700 to-blue-700 text-white md:pt-12  '>
         <div className=''>
           <h1 className='hidden lg:block lg:text-4xl lg:font-semibold lg:text-center lg:font-sans'>What will you teach today?</h1>
           <p className='text-center text-black md:my-6 md:block flex items-center gap-2 justify-center mt-8'><input className='md:pr-96 md:pl-3 md:py-2 py-2 pl-6 rounded-lg' type="text" placeholder='Search for your content' /> <Image className='md:hidden rounded-full h-10 w-10' src={profile} /></p>
@@ -117,28 +127,28 @@ const NavbarSection = () => {
               </div>): ''}
             </div>
             <div onClick={showSection2} className='flex flex-col items-center cursor-pointer relative'>
-              <p className={Section2===true ? 'text-2xl md:p-4 p-3 bg-slate-400 text-blue-800 rounded-full mb-2': 'text-2xl md:p-4 p-3 bg-white text-blue-800 rounded-full mb-2'}><AiFillContainer /></p>
+              <p className={Section2===true ? 'text-2xl md:p-4 p-3 bg-slate-400 text-blue-700 rounded-full mb-2': 'text-2xl md:p-4 p-3 bg-white text-blue-800 rounded-full mb-2'}><AiFillContainer /></p>
               <p className='font-sans text-sm font-normal'>Content</p>
               {Section2===true ? (<div className='text-4xl absolute bottom-2 bottom-[-35px] left-2'>
                   <IoTriangle/>
               </div>): ''}
             </div>
             <div onClick={showSection3} className='flex flex-col items-center cursor-pointer relative'>
-              <p className={Section3===true ? 'text-2xl md:p-4 p-3 bg-slate-400 text-blue-800 rounded-full mb-2': 'text-2xl md:p-4 p-3 bg-white text-blue-800 rounded-full mb-2'}><RiRecordCircleFill /></p>
+              <p className={Section3===true ? 'text-2xl md:p-4 p-3 bg-slate-400 text-blue-700 rounded-full mb-2': 'text-2xl md:p-4 p-3 bg-white text-blue-800 rounded-full mb-2'}><RiRecordCircleFill /></p>
               <p className='font-sans text-sm font-normal'>Recordings</p>
               {Section3===true ? (<div className='text-4xl absolute bottom-2 bottom-[-35px] left-2'>
                   <IoTriangle/>
               </div>): ''}
             </div>
             <div onClick={showSection4} className='flex flex-col items-center cursor-pointer relative'>
-              <p className={Section4===true ? 'text-2xl md:p-4 p-3 bg-slate-400 text-blue-800 rounded-full mb-2': 'text-2xl md:p-4 p-3 bg-white text-blue-800 rounded-full mb-2'} ><PiTrashSimpleFill /></p>
+              <p className={Section4===true ? 'text-2xl md:p-4 p-3 bg-slate-400 text-blue-700 rounded-full mb-2': 'text-2xl md:p-4 p-3 bg-white text-blue-800 rounded-full mb-2'} ><PiTrashSimpleFill /></p>
               <p className='font-sans text-sm font-normal'>Resources</p>
               {Section4===true ? (<div className='text-4xl absolute bottom-2 bottom-[-35px] left-2'>
                   <IoTriangle/>
               </div>): ''}
             </div>
             <div onClick={showSection5} className='flex flex-col items-center cursor-pointer relative'>
-              <p className={Section5===true ? 'text-2xl md:p-4 p-3 bg-slate-400 text-blue-800 rounded-full mb-2': 'text-2xl md:p-4 p-3 bg-white text-blue-800 rounded-full mb-2'}><FaUser /></p>
+              <p className={Section5===true ? 'text-2xl md:p-4 p-3 bg-slate-400 text-blue-700 rounded-full mb-2': 'text-2xl md:p-4 p-3 bg-white text-blue-800 rounded-full mb-2'}><FaUser /></p>
               <p className='font-sans text-sm font-normal'>Settings</p>
               {Section5===true ? (<div className='text-4xl absolute bottom-2 bottom-[-35px] left-2'>
                   <IoTriangle/>
@@ -220,20 +230,56 @@ const NavbarSection = () => {
 
             {Section5===true ? <section className='grid md:grid-cols-5 py-16 md:mx-8 mx-2'>
 
-                <div  className=' md:col-span-1 flex gap-4 pb-8 px-4 border-b border-solid border-gray-2'>
-                    <Image className='rounded-full h-10 w-10' src={profile} alt='user image'/>
-                    <div className=''>
-                    <p className='font-semibold text-md'>Bright Igwe</p>
-                     <p className='text-slate-600 text-sm font-sans'>topkidz02@gmail.com</p>
-                    </div>
+                <div  className=' md:col-span-1 pl-4 '>
+                      <div className='flex gap-4 border-b border-solid border-gray-2 pb-6'>
+                          <Image className='rounded-full h-10 w-10' src={profile} alt='user image'/>
+                          <div className=''>
+                          <p className='font-semibold text-md'>Bright Igwe</p>
+                          <p className='text-slate-600 text-sm font-sans'>topkidz02@gmail.com</p>
+                          </div>
+                      </div>
+
+                      <div className='py-10'>
+                        <p onClick={showSection5} className={Section5===true ? ('flex items-center gap-6 text-blue-800 text-md font-sans pb-6') : ('flex items-center gap-6 text-md font-sans pb-6')}> <span className='text-2xl'>< CiUser/></span> Your Profile</p>
+                        <p onClick={showBank} className={Bank===true ? ('flex items-center gap-6 text-md text-blue-800 font-sans') : ('flex items-center gap-6 text-md font-sans')} >  <span className='text-2xl'>< CiBank/></span> Bank Details</p>
+                        <p className='flex items-center gap-6 text-md font-sans pt-44'> <span className='text-2xl'><IoIosLogOut/></span>Log-out</p>
+                      </div>
                 </div>
 
-                <div className=' hidden md:block md:col-span-4 border-l border-solid border-gray-4 px-6'>
+                {Section5===true ? <div className=' hidden md:block md:col-span-4 border-l border-solid border-gray-4 px-6'>
                     <div >
-                      <h1 className='flex items-center text-blue-800 text-xl font-semibold'> <span className='mr-6'><FaAngleRight/> </span> Your Profile</h1>
+                      <h1 className='flex items-center text-blue-700 text-xl font-semibold'> <span className='mr-6'><FaAngleRight/> </span> Your Profile</h1>
                     </div>
-                </div>
-            </section> : ''}
+
+                    <div className='flex gap-6 items-center pt-8'>
+                        <p className='p-6 bg-gray-700 text-2xl text-gray rounded-full'><IoCameraOutline /></p>
+                        <p className='text-lg'>Upload your profile photo</p>
+                    </div>
+
+                    <form className='text-sm' action=" ">
+                        <div className='flex gap-4 pr-44 py-6'>
+                          <input className='border border-solid border-gray w-full py-3 px-2 rounded-lg focus:border-blue-800 focus:outline-none  focus:border-2'  type="text" placeholder='Bright Igwe'/>
+                          <input  className='border border-solid border-gray w-full py-3 px-2 rounded-lg focus:border-blue-800 focus:outline-none  focus:border-2'type="text" placeholder='Enter username'/>
+                        </div>
+
+                        <div className='flex gap-4 pr-44 pb-6'>
+                          <input className='border border-solid border-gray w-full py-3 px-2 rounded-lg focus:border-blue-800 focus:outline-none  focus:border-2' type="text" placeholder='Job Title'/>
+                          <input className='border border-solid border-gray w-full py-3 px-2 rounded-lg focus:border-blue-800 focus:outline-none  focus:border-2' type="text" placeholder='Enter number'/>
+                        </div>
+                        
+                        <div className='pb-6'>
+                         <input className='border border-solid border-gray w-2/5 h-10 py-3 px-2 rounded-lg focus:border-blue-800 focus:outline-none  focus:border-2' type="text" placeholder='Write about yourself in one or two sentence'/>
+                        </div>
+
+                    </form>
+
+                    <button className='px-10 py-3 text-white font-semibold text-md  bg-gradient-to-l from-purple-600 via-blue-700 to-blue-700 rounded-lg font-sans'>Update Profile</button>
+                </div> : ''}
+                </section> : ''}
+
+                {Bank===true ? <div >
+                      <h1 className='flex items-center text-blue-700 text-xl font-semibold'> <span className='mr-6'><FaAngleRight/> </span> Your Profile</h1>
+                </div> : ''}
 
     </div>
   )
