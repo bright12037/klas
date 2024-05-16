@@ -113,7 +113,7 @@ const NavbarSection = () => {
           </div>
           <div className='ml-auto flex items-center gap-4'>
             <p className='text-blue-700 boder-solid border py-3 px-8 rounded-lg border-blue-700'>Try Pro</p>
-            <p className='px-10 py-3  bg-gradient-to-r from-purple-600 via-blue-700 to-blue-700 rounded-lg font-sans'>Create a content</p>
+            <p className='px-10 py-3  bg-gradient-to-l from-purple-600 via-blue-700 to-blue-700 rounded-lg font-sans'>Create a content</p>
             <Image className='rounded-full h-10 w-10' src={profile} />
           </div>
       </nav>
@@ -284,7 +284,7 @@ const NavbarSection = () => {
                 </section> : ''}
 
                 {Bank===true ? <div >
-                      <h1 className='flex items-center text-blue-700 text-xl font-semibold'> <span className='mr-6'><FaAngleRight/> </span> Your Profile</h1>
+                      <h1 className='flex items-center text-blue-700 text-xl font-semibold'> <span className='mr-6'><FaAngleRight/> </span> Your Bank Details</h1>
                 </div> : ''}
 
     </div>
