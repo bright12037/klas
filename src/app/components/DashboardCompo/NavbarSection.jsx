@@ -1,6 +1,7 @@
 'use client'
 import React from 'react'
 import { useState } from 'react'
+import Link from 'next/link'
 
 import logo from './dashimages/klas-logo.svg'
 import Image from 'next/image'
@@ -126,35 +127,35 @@ const NavbarSection = () => {
         </div>
         <div className='flex justify-between md:justify-center md:gap-24 gap py-6 mx-2 '>
             <div onClick={showSection1} className='flex flex-col items-center cursor-pointer relative'>
-              <p className={Section1===true ? 'text-2xl md:p-4 p-3 bg-slate-400 text-blue-800 rounded-full mb-2': 'text-2xl md:p-4 p-3 bg-white text-blue-800 rounded-full mb-2'}><BiSolidHomeCircle /></p>
+              <p className={Section1===true ? 'text-2xl md:p-4 p-3 bg-blue-200 text-blue-800 rounded-full mb-2': 'text-2xl md:p-4 p-3 bg-white text-blue-800 rounded-full mb-2'}><BiSolidHomeCircle /></p>
               <p className='font-sans text-sm font-normal'>Home</p>
               {Section1===true ? (<div className='text-4xl absolute bottom-2 bottom-[-35px] left-2'>
                   <IoTriangle/>
               </div>): ''}
             </div>
             <div onClick={showSection2} className='flex flex-col items-center cursor-pointer relative'>
-              <p className={Section2===true ? 'text-2xl md:p-4 p-3 bg-slate-400 text-blue-700 rounded-full mb-2': 'text-2xl md:p-4 p-3 bg-white text-blue-800 rounded-full mb-2'}><AiFillContainer /></p>
+              <p className={Section2===true ? 'text-2xl md:p-4 p-3 bg-blue-200 text-blue-700 rounded-full mb-2': 'text-2xl md:p-4 p-3 bg-white text-blue-800 rounded-full mb-2'}><AiFillContainer /></p>
               <p className='font-sans text-sm font-normal'>Content</p>
               {Section2===true ? (<div className='text-4xl absolute bottom-2 bottom-[-35px] left-2'>
                   <IoTriangle/>
               </div>): ''}
             </div>
             <div onClick={showSection3} className='flex flex-col items-center cursor-pointer relative'>
-              <p className={Section3===true ? 'text-2xl md:p-4 p-3 bg-slate-400 text-blue-700 rounded-full mb-2': 'text-2xl md:p-4 p-3 bg-white text-blue-800 rounded-full mb-2'}><RiRecordCircleFill /></p>
+              <p className={Section3===true ? 'text-2xl md:p-4 p-3 bg-blue-200 text-blue-700 rounded-full mb-2': 'text-2xl md:p-4 p-3 bg-white text-blue-800 rounded-full mb-2'}><RiRecordCircleFill /></p>
               <p className='font-sans text-sm font-normal'>Recordings</p>
               {Section3===true ? (<div className='text-4xl absolute bottom-2 bottom-[-35px] left-2'>
                   <IoTriangle/>
               </div>): ''}
             </div>
             <div onClick={showSection4} className='flex flex-col items-center cursor-pointer relative'>
-              <p className={Section4===true ? 'text-2xl md:p-4 p-3 bg-slate-400 text-blue-700 rounded-full mb-2': 'text-2xl md:p-4 p-3 bg-white text-blue-800 rounded-full mb-2'} ><PiTrashSimpleFill /></p>
+              <p className={Section4===true ? 'text-2xl md:p-4 p-3 bg-blue-200 text-blue-700 rounded-full mb-2': 'text-2xl md:p-4 p-3 bg-white text-blue-800 rounded-full mb-2'} ><PiTrashSimpleFill /></p>
               <p className='font-sans text-sm font-normal'>Resources</p>
               {Section4===true ? (<div className='text-4xl absolute bottom-2 bottom-[-35px] left-2'>
                   <IoTriangle/>
               </div>): ''}
             </div>
             <div onClick={showSection5} className='flex flex-col items-center cursor-pointer relative'>
-              <p className={Section5===true ? 'text-2xl md:p-4 p-3 bg-slate-400 text-blue-700 rounded-full mb-2': 'text-2xl md:p-4 p-3 bg-white text-blue-800 rounded-full mb-2'}><FaUser /></p>
+              <p className={Section5===true ? 'text-2xl md:p-4 p-3 bg-blue-200 text-blue-700 rounded-full mb-2': 'text-2xl md:p-4 p-3 bg-white text-blue-800 rounded-full mb-2'}><FaUser /></p>
               <p className='font-sans text-sm font-normal'>Settings</p>
               {Section5===true ? (<div className='text-4xl absolute bottom-2 bottom-[-35px] left-2'>
                   <IoTriangle/>
@@ -246,46 +247,53 @@ const NavbarSection = () => {
                       </div>
 
                       <div className='py-10'>
-                        <p onClick={showProfile} className={Profile===true ? ('flex items-center gap-6 text-blue-800 text-md font-sans pb-6') : ('flex items-center gap-6 text-md font-sans pb-6')}> <span className='text-2xl'>< CiUser/></span> Your Profile</p>
-                        <p onClick={showBank} className={Bank===true ? ('flex items-center gap-6 text-md text-blue-800 font-sans') : ('flex items-center gap-6 text-md font-sans')} >  <span className='text-2xl'>< CiBank/></span> Bank Details</p>
-                        <p className='flex items-center gap-6 text-md font-sans pt-44'> <span className='text-2xl'><IoIosLogOut/></span>Log-out</p>
+                        <p onClick={showProfile} className={Profile===true ? ('flex items-center gap-6 font-semibold text-blue-800 text-md font-sans pb-6 cursor-pointer') : ('flex items-center gap-6 text-md font-sans pb-6 cursor-pointer')}> <span className='text-2xl'>< CiUser/></span> Your Profile</p>
+                        <p onClick={showBank} className={Bank===true ? ('flex items-center gap-6 text-md font-semibold text-blue-800 font-sans cursor-pointer') : ('flex items-center gap-6 text-md font-sans cursor-pointer')} >  <span className='text-2xl'>< CiBank/></span> Bank Details</p>
+                       <Link href="./signuppage"><p className='flex items-center gap-6 text-blue-800 cursor-pointer text-md font-bold font-sans pt-44'> <span className='text-2xl'><IoIosLogOut/></span>Log-out</p></Link> 
                       </div>
                 </div>
 
-                {Profile ===true ? <div className=' hidden md:block md:col-span-4 border-l border-solid border-gray-4 px-6'>
-                    <div >
-                      <h1 className='flex items-center text-blue-700 text-xl font-semibold'> <span className='mr-6'><FaAngleRight/> </span> Your Profile</h1>
-                    </div>
+                 <div className=' hidden md:block md:col-span-4 border-l border-solid border-gray-4 px-6'>
+                      {Profile ===true ? (<div> 
 
-                    <div className='flex gap-6 items-center pt-8'>
-                        <p className='p-6 bg-gray-700 text-2xl text-gray rounded-full'><IoCameraOutline /></p>
-                        <p className='text-lg'>Upload your profile photo</p>
-                    </div>
-
-                    <form className='text-sm' action=" ">
-                        <div className='flex gap-4 pr-44 py-6'>
-                          <input className='border border-solid border-gray w-full py-3 px-2 rounded-lg focus:border-blue-800 focus:outline-none  focus:border-2'  type="text" placeholder='Bright Igwe'/>
-                          <input  className='border border-solid border-gray w-full py-3 px-2 rounded-lg focus:border-blue-800 focus:outline-none  focus:border-2'type="text" placeholder='Enter username'/>
+                        <div>
+                          <h1 className='flex items-center text-blue-700 text-xl font-semibold '> <span className='mr-6'><FaAngleRight/> </span> Your Profile</h1>
                         </div>
 
-                        <div className='flex gap-4 pr-44 pb-6'>
-                          <input className='border border-solid border-gray w-full py-3 px-2 rounded-lg focus:border-blue-800 focus:outline-none  focus:border-2' type="text" placeholder='Job Title'/>
-                          <input className='border border-solid border-gray w-full py-3 px-2 rounded-lg focus:border-blue-800 focus:outline-none  focus:border-2' type="text" placeholder='Enter number'/>
-                        </div>
-                        
-                        <div className='pb-6'>
-                         <input className='border border-solid border-gray w-2/5 h-10 py-3 px-2 rounded-lg focus:border-blue-800 focus:outline-none  focus:border-2' type="text" placeholder='Write about yourself in one or two sentence'/>
+                        <div className='flex gap-6 items-center pt-8'>
+                            <p className='p-6 bg-gray-700 text-2xl text-gray rounded-full'><IoCameraOutline /></p>
+                            <p className='text-lg'>Upload your profile photo</p>
                         </div>
 
-                    </form>
+                        <form className='text-sm' action=" ">
+                            <div className='flex gap-4 pr-44 py-6'>
+                              <input className='border border-solid border-gray w-full py-3 px-2 rounded-lg focus:border-blue-800 focus:outline-none  focus:border-2'  type="text" placeholder='Bright Igwe'/>
+                              <input  className='border border-solid border-gray w-full py-3 px-2 rounded-lg focus:border-blue-800 focus:outline-none  focus:border-2'type="text" placeholder='Enter username'/>
+                            </div>
 
-                    <button className='px-10 py-3 text-white font-semibold text-md  bg-gradient-to-l from-purple-600 via-blue-700 to-blue-700 rounded-lg font-sans'>Update Profile</button>
-                </div> : ''}
-                </section> : ''}
+                            <div className='flex gap-4 pr-44 pb-6'>
+                              <input className='border border-solid border-gray w-full py-3 px-2 rounded-lg focus:border-blue-800 focus:outline-none  focus:border-2' type="text" placeholder='Job Title'/>
+                              <input className='border border-solid border-gray w-full py-3 px-2 rounded-lg focus:border-blue-800 focus:outline-none  focus:border-2' type="text" placeholder='Enter number'/>
+                            </div>
+                            
+                            <div className='pb-6'>
+                            <input className='border border-solid border-gray w-2/5 h-10 py-3 px-2 rounded-lg focus:border-blue-800 focus:outline-none  focus:border-2' type="text" placeholder='Write about yourself in one or two sentence'/>
+                            </div>
 
-                {Bank===false ? <div >
-                      <h1 className='flex items-center text-blue-700 text-xl font-semibold'> <span className='mr-6'><FaAngleRight/> </span> Your Bank Details</h1>
-                </div> : ''}
+                        </form>
+
+                        <button className='px-10 py-3 text-white font-semibold text-md  bg-gradient-to-l from-purple-600 via-blue-700 to-blue-700 rounded-lg font-sans'>Update Profile</button> 
+                    
+                        </div>) : ''}
+                      
+                      {Bank===false ? '' : <div >
+                          <h1 className='flex items-center text-blue-700 text-xl font-semibold cursor-pointer'> <span className='mr-6'><FaAngleRight/> </span> Bank Details</h1>
+                          </div> }
+                  
+                  </div> 
+            </section> : ''}
+
+               
 
     </div>
   )
