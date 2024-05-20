@@ -4,6 +4,8 @@ import { useState } from 'react'
 import Link from 'next/link'
 
 import logo from './dashimages/klas-logo.svg'
+import resource from './dashimages/resource.PNG'
+import record from './dashimages/record.PNG'
 import Image from 'next/image'
 import profile from  './dashimages/image.webp'
 
@@ -115,7 +117,7 @@ const NavbarSection = () => {
           <div className='ml-auto flex items-center gap-4'>
             <p className='text-blue-700 boder-solid border py-3 px-8 rounded-lg border-blue-700'>Try Pro</p>
             <p className='px-10 py-3  bg-gradient-to-l from-purple-600 via-blue-700 to-blue-700 rounded-lg font-sans'>Create a content</p>
-            <Image className='rounded-full h-10 w-10' src={profile} />
+            <Image className='rounded-full h-10 w-10 lg:h-12 lg:w-12' src={profile} />
           </div>
       </nav>
 
@@ -218,6 +220,11 @@ const NavbarSection = () => {
                         <p onClick={showDrop} className='ml-auto shadow-md md:pl-44 pl-16 text-xl md:pr-6 pr-2 md:py-4 py-4 boder-solid border rounded-lg'> <RiArrowDropDownLine/> </p>
                   </div>
 
+                  <div className='flex items-center flex-col justify-center py-10'>
+                              <Image src={record} />
+                              <p className='text-lg text-gray-500 font-semibold'>No recordings yet</p>
+                  </div> 
+
 
 
               </section>: ''}
@@ -231,7 +238,12 @@ const NavbarSection = () => {
                           <div className='flex items-center'>
                                 <p onClick={showDrop} className='shadow-md md:pl-44 pl-24 text-xl md:pr-6 pr-2 md:py-4 md:py-2 py-4 boder-solid border rounded-lg'> <RiArrowDropDownLine/> </p>
                                   <button className='ml-auto px-6 md:py-2 py-4 bg-blue-700 text-white cursor-pointer rounded-lg'> Upoad Link </button>
-                          </div>         
+                          </div> 
+
+                          <div className='flex items-center flex-col justify-center py-10'>
+                              <Image src={resource} />
+                              <p className='text-lg text-gray-500 font-semibold'>No resources yet</p>
+                          </div>        
              </section>: ''}
 
 
@@ -279,7 +291,7 @@ const NavbarSection = () => {
                             </div>
                             
                             <div className='pb-6'>
-                            <input className='border border-solid border-gray w-2/5 h-10 py-3 px-2 rounded-lg focus:border-blue-800 focus:outline-none  focus:border-2' type="text" placeholder='Write about yourself in one or two sentence'/>
+                            <input className='border border-solid border-gray w-2/5 h-10 pt-3 pb-44 px-2 rounded-lg focus:border-blue-800 focus:outline-none  focus:border-2' type="text" placeholder='Write about yourself in one or two sentence'/>
                             </div>
 
                         </form>
@@ -309,6 +321,7 @@ const NavbarSection = () => {
 
                           </form>
 
+                          <button className='px-10 py-3 mt-6 text-white font-semibold text-md  bg-gradient-to-l from-purple-600 via-blue-700 to-blue-700 rounded-lg font-sans'>Update Profile</button>
 
                           </div> }
 
@@ -357,7 +370,7 @@ const NavbarSection = () => {
                               </div>
                               
                               <div className='pb-6'>
-                              <input className='border border-solid border-gray w-2/5 h-10 py-3 px-2 rounded-lg focus:border-blue-800 focus:outline-none  focus:border-2' type="text" placeholder='Write about yourself in one or two sentence'/>
+                              <input className='border border-solid border-gray w-3/5 h-10 pt-3 pb-44 px-2 rounded-lg focus:border-blue-800 focus:outline-none  focus:border-2' type="text" placeholder='Write about yourself in one or two sentence'/>
                               </div>
 
                           </form>
@@ -386,6 +399,8 @@ const NavbarSection = () => {
                             </div>
 
                           </form>
+
+                          <button className='px-10 py-3 mt-6 text-white font-semibold text-md  bg-gradient-to-l from-purple-600 via-blue-700 to-blue-700 rounded-lg font-sans'>Update Profile</button>
                             </div> }  
                   </div> 
                 
@@ -437,7 +452,7 @@ const NavbarSection = () => {
                             </div>
                             
                             <div className='pb-6'>
-                            <input className='border border-solid border-gray h-10 py-3 px-2 rounded-lg focus:border-blue-800 focus:outline-none  focus:border-2' type="text" placeholder='Write about yourself in one or two sentence'/>
+                            <input className='border border-solid border-gray h-10 pt-3 pb-32 w-full px-2 rounded-lg focus:border-blue-800 focus:outline-none  focus:border-2' type="text" placeholder='Write about yourself briefly'/>
                             </div>
 
                         </form>
@@ -466,6 +481,9 @@ const NavbarSection = () => {
                             </div>
 
                           </form>
+
+                          <button className='px-10 py-3 text-white font-semibold text-md  bg-gradient-to-l from-purple-600 via-blue-700 to-blue-700 rounded-lg font-sans'>Update Profile</button>
+
                           </div> }  
                 </div>  
                   
