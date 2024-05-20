@@ -110,14 +110,14 @@ const NavbarSection = () => {
   return (
     <div className='font-dmsans'> 
       <nav className='hidden lg:mx-8 lg:flex lg:text-white lg:font-bold lg:text-sm lg:my-8'>
-          <div className='flex items-center'>
+          <div className='flex items-center cursor-pointer'>
             <Image className='h-16 w-16' src={logo} />
             <h1 className='text-blue-700 text-3xl'>Klas</h1>
           </div>
           <div className='ml-auto flex items-center gap-4'>
-            <p className='text-blue-700 boder-solid border py-3 px-8 rounded-lg border-blue-700'>Try Pro</p>
-            <p className='px-10 py-3  bg-gradient-to-l from-purple-600 via-blue-700 to-blue-700 rounded-lg font-sans'>Create a content</p>
-            <Image className='rounded-full h-10 w-10 lg:h-12 lg:w-12' src={profile} />
+            <p className='text-blue-700 boder-solid border py-3 px-8 rounded-lg border-blue-700 cursor-pointer'>Try Pro</p>
+            <p className='px-10 py-3  bg-gradient-to-l from-purple-600 via-blue-700 to-blue-700 rounded-lg font-sans cursor-pointer'>Create a content</p>
+            <Image className='rounded-full h-10 w-10 lg:h-12 lg:w-12 cursor-pointer' src={profile} />
           </div>
       </nav>
 
