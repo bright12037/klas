@@ -31,7 +31,7 @@ const NavbarSection = () => {
         const[Color2, setColor2] = useState(false)
         const[Color3, setColor3] = useState(false)
         const[Bank, setBank] = useState(false)
-        const[Profile, setProfile] = useState(true)
+        const[Profile, setProfile] = useState(false)
 
       const showSection1 = () => {
         setSection1(true)
@@ -97,11 +97,11 @@ const NavbarSection = () => {
 
       const showProfile = () => {
         setBank(false)
-        setProfile(true)
+        setProfile(!Profile)
       }
       const showBank = () => {
-        setBank(true)
-        setProfile(false)
+        setBank(!Bank)
+        setProfile(true)
       }
 
 
@@ -235,26 +235,28 @@ const NavbarSection = () => {
              </section>: ''}
 
 
-            {Section5===true ? <section className='grid md:grid-cols-5 py-16 md:mx-8 mx-2'>
+            {Section5===true ? <section className='grid lg:grid-cols-5 py-16 md:mx-8 mx-2'>
 
-                <div  className=' md:col-span-1 pl-4 '>
-                      <div className='flex gap-4 border-b border-solid border-gray-2 pb-6'>
-                          <Image className='rounded-full h-10 w-10' src={profile} alt='user image'/>
-                          <div className=''>
-                          <p className='font-semibold text-md'>Bright Igwe</p>
-                          <p className='text-slate-600 text-sm font-sans'>topkidz02@gmail.com</p>
-                          </div>
-                      </div>
+{/* ===============================large screen ========================================================================================= */}
 
-                      <div className='py-10'>
-                        <p onClick={showProfile} className={Profile===true ? ('flex items-center gap-6 font-semibold text-blue-800 text-md font-sans pb-6 cursor-pointer') : ('flex items-center gap-6 text-md font-sans pb-6 cursor-pointer')}> <span className='text-2xl'>< CiUser/></span> Your Profile</p>
-                        <p onClick={showBank} className={Bank===true ? ('flex items-center gap-6 text-md font-semibold text-blue-800 font-sans cursor-pointer') : ('flex items-center gap-6 text-md font-sans cursor-pointer')} >  <span className='text-2xl'>< CiBank/></span> Bank Details</p>
-                       <Link href="./signuppage"><p className='flex items-center gap-6 text-blue-800 cursor-pointer text-md font-bold font-sans pt-44'> <span className='text-2xl'><IoIosLogOut/></span>Log-out</p></Link> 
-                      </div>
-                </div>
+                  <div  className='hidden md:hidden lg:block lg:col-span-1 pl-4 '>
+                        <div className='flex gap-4 border-b border-solid border-gray-2 pb-6'>
+                            <Image className='rounded-full h-10 w-10' src={profile} alt='user image'/>
+                            <div className=''>
+                            <p className='font-semibold text-md'>Bright Igwe</p>
+                            <p className='text-slate-600 text-sm font-sans'>topkidz02@gmail.com</p>
+                            </div>
+                        </div>
 
-                 <div className=' hidden md:block md:col-span-4 border-l border-solid border-gray-4 px-6'>
-                      {Profile ===true ? (<div> 
+                        <div className='py-10'>
+                          <p onClick={showProfile} className={Profile===false ? ('flex items-center gap-6 font-semibold text-blue-800 text-md font-sans pb-6 cursor-pointer') : ('flex items-center gap-6 text-md font-sans pb-6 cursor-pointer')}> <span className='text-2xl'>< CiUser/></span> Your Profile</p>
+                          <p onClick={showBank} className={Bank===true ? ('flex items-center gap-6 text-md font-semibold text-blue-800 font-sans cursor-pointer') : ('flex items-center gap-6 text-md font-sans cursor-pointer')} >  <span className='text-2xl'>< CiBank/></span> Bank Details</p>
+                        <Link href="./signuppage"><p className='flex items-center gap-6 text-blue-800 cursor-pointer text-md font-bold font-sans mt-44'> <span className='text-2xl'><IoIosLogOut/></span>Log-out</p></Link> 
+                        </div>
+                  </div>
+
+                  <div className=' hidden lg:block md:col-span-4 border-l border-solid border-gray-4 px-6'>
+                      {Profile ===false ? (<div> 
 
                         <div>
                           <h1 className='flex items-center text-blue-700 text-xl font-semibold '> <span className='mr-6'><FaAngleRight/> </span> Your Profile</h1>
@@ -285,13 +287,193 @@ const NavbarSection = () => {
                         <button className='px-10 py-3 text-white font-semibold text-md  bg-gradient-to-l from-purple-600 via-blue-700 to-blue-700 rounded-lg font-sans'>Update Profile</button> 
                     
                         </div>) : ''}
-                      
+
                       {Bank===false ? '' : <div >
                           <h1 className='flex items-center text-blue-700 text-xl font-semibold cursor-pointer'> <span className='mr-6'><FaAngleRight/> </span> Bank Details</h1>
+                          <form action="">
+                            <div className='grid grid-cols-2 gap-10 mt-6'>
+                                <div className='grid gap-2' >
+                                  <label className='text-lg text-bold' htmlFor="">Bank Name</label>
+                                  <input className='border border-solid border-gray px-2 py-2 text-bold rounded-lg' type="text" placeholder='Enter Bank name' />
+                                </div>
+                                <div className='grid gap-2 '>
+                                  <label className='text-lg text-bold' htmlFor="">Account Number</label>
+                                  <input className='border border-solid border-gray px-2 py-2 text-bold rounded-lg' type="text" placeholder='Enter Account Number' />
+                                </div>
+                                <div className='grid gap-2 '>
+                                  <label className='text-lg text-bold' htmlFor="">Account Name</label>
+                                  <input className='border border-solid border-gray px-2 py-2 text-bold rounded-lg' type="text" placeholder='Enter Account Name' />
+                                </div>
+
+                            </div>
+
+                          </form>
+
+
                           </div> }
+
+                  </div>
+{/* ===============================tablet screen ========================================================================================= */}
+                
+                <div className='relative bg-white'>
                   
+                  <div  className='hidden md:block lg:hidden md:col-span-1 pl-4 '>
+                        <div className='flex gap-4 border-b border-solid border-gray-2 pb-6'>
+                            <Image className='rounded-full h-10 w-10' src={profile} alt='user image'/>
+                            <div className=''>
+                            <p className='font-semibold text-md'>Bright Igwe</p>
+                            <p className='text-slate-600 text-sm font-sans'>topkidz02@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div className='py-10 px-5'>
+                          <p onClick={showProfile} className={Profile===false ? ('flex items-center gap-6 font-semibold text-blue-800 text-md font-sans pb-6 cursor-pointer') : ('flex items-center gap-6 text-md font-sans pb-6 cursor-pointer')}> <span className='text-2xl'>< CiUser/></span> Your Profile</p>
+                          <p onClick={showBank} className={Bank===true ? ('flex items-center gap-6 text-md font-semibold text-blue-800 font-sans cursor-pointer') : ('flex items-center gap-6 text-md font-sans cursor-pointer')} >  <span className='text-2xl'>< CiBank/></span> Bank Details</p>
+                        <Link href="./signuppage"><p className='flex items-center gap-6 text-blue-800 cursor-pointer text-md font-bold font-sans mt-44'> <span className='text-2xl'><IoIosLogOut/></span>Log-out</p></Link> 
+                        </div>
+                  </div>
+                  
+                  <div className=' hidden md:block lg:hidden md:col-span-4 border-l border-solid border-gray-4 px-2 absolute top-0 left-0'>
+                        {Profile ===false ? (<div className='bg-white'> 
+
+                          <div>
+                            <h1 className='flex items-center text-blue-700 text-xl font-semibold '> <span onClick={showProfile} className='mr-6'><FaAngleRight/> </span> Your Profile</h1>
+                          </div>
+
+                          <div className='flex gap-6 items-center pt-8'>
+                              <p className='p-6 bg-gray-700 text-2xl text-gray rounded-full'><IoCameraOutline /></p>
+                              <p className='text-lg'>Upload your profile photo</p>
+                          </div>
+
+                          <form className='text-sm' action=" ">
+                              <div className='flex gap-4 pr-44 py-6'>
+                                <input className='border border-solid border-gray w-full py-3 px-2 rounded-lg focus:border-blue-800 focus:outline-none  focus:border-2'  type="text" placeholder='Bright Igwe'/>
+                                <input  className='border border-solid border-gray w-full py-3 px-2 rounded-lg focus:border-blue-800 focus:outline-none  focus:border-2'type="text" placeholder='Enter username'/>
+                              </div>
+
+                              <div className='flex gap-4 pr-44 pb-6'>
+                                <input className='border border-solid border-gray w-full py-3 px-2 rounded-lg focus:border-blue-800 focus:outline-none  focus:border-2' type="text" placeholder='Job Title'/>
+                                <input className='border border-solid border-gray w-full py-3 px-2 rounded-lg focus:border-blue-800 focus:outline-none  focus:border-2' type="text" placeholder='Enter number'/>
+                              </div>
+                              
+                              <div className='pb-6'>
+                              <input className='border border-solid border-gray w-2/5 h-10 py-3 px-2 rounded-lg focus:border-blue-800 focus:outline-none  focus:border-2' type="text" placeholder='Write about yourself in one or two sentence'/>
+                              </div>
+
+                          </form>
+
+                          <button className='px-10 py-3 text-white font-semibold text-md  bg-gradient-to-l from-purple-600 via-blue-700 to-blue-700 rounded-lg font-sans'>Update Profile</button> 
+                      
+                          </div>) : ''}
+
+                        {Bank===false ? '' : <div className='bg-white'>
+                            <h1 className='flex items-center text-blue-700 text-xl font-semibold cursor-pointer'> <span onClick={showBank} className='mr-6'><FaAngleRight/> </span> Bank Details</h1>
+                            <form action="">
+                            <div className='grid grid-cols-2 gap-10 mt-6'>
+                                <div className='grid gap-2' >
+                                  <label className='text-lg text-bold' htmlFor="">Bank Name</label>
+                                  <input className='border border-solid border-gray px-2 py-2 text-bold rounded-lg w-full' type="text" placeholder='Enter Bank name' />
+                                </div>
+                                <div className='grid gap-2 '>
+                                  <label className='text-lg text-bold' htmlFor="">Account Number</label>
+                                  <input className='border border-solid border-gray px-2 py-2 text-bold rounded-lg w-full' type="text" placeholder='Enter Account Number' />
+                                </div>
+                                <div className='grid gap-2 '>
+                                  <label className='text-lg text-bold' htmlFor="">Account Name</label>
+                                  <input className='border border-solid border-gray px-2 py-2 text-bold rounded-lg ' type="text" placeholder='Enter Account Name' />
+                                </div>
+
+                            </div>
+
+                          </form>
+                            </div> }  
                   </div> 
-            </section> : ''}
+                
+                </div>                     
+
+
+
+{/* ===============================mobile screen ========================================================================================= */}
+                
+                <div className='relative bg-white'>
+                  
+                <div  className='md:hidden lg:hidden '>
+                      <div className='flex gap-4 border-b border-solid border-gray-2 pb-6'>
+                          <Image className='rounded-full h-10 w-10' src={profile} alt='user image'/>
+                          <div className=''>
+                          <p className='font-semibold text-md'>Bright Igwe</p>
+                          <p className='text-slate-600 text-sm font-sans'>topkidz02@gmail.com</p>
+                          </div>
+                      </div>
+
+                      <div className='py-10 px-5'>
+                        <p onClick={showProfile} className={Profile===false ? ('flex items-center gap-6 font-semibold text-blue-800 text-md font-sans pb-6 cursor-pointer') : ('flex items-center gap-6 text-md font-sans pb-6 cursor-pointer')}> <span className='text-2xl'>< CiUser/></span> Your Profile</p>
+                        <p onClick={showBank} className={Bank===true ? ('flex items-center gap-6 text-md font-semibold text-blue-800 font-sans cursor-pointer') : ('flex items-center gap-6 text-md font-sans cursor-pointer')} >  <span className='text-2xl'>< CiBank/></span> Bank Details</p>
+                       <Link href="./signuppage"><p className='flex items-center gap-6 text-blue-800 cursor-pointer text-md font-bold font-sans mt-44'> <span className='text-2xl'><IoIosLogOut/></span>Log-out</p></Link> 
+                      </div>
+                </div>
+                 
+                 <div className='md:hidden lg:hidden bg-white border-l border-solid border-gray-4 px-6 absolute top-0 left-0'>
+                      {Profile ===false ? (<div> 
+
+                        <div>
+                          <h1 className='flex items-center text-blue-700 text-xl font-semibold '> <span onClick={showProfile} className='mr-6'><FaAngleRight/> </span> Your Profile</h1>
+                        </div>
+
+                        <div className='flex gap-6 items-center pt-8'>
+                            <p className='p-4 bg-gray-700 text-xl text-gray rounded-full'><IoCameraOutline /></p>
+                            <p className='text-md'>Upload your profile photo</p>
+                        </div>
+
+                        <form className='text-sm' action=" ">
+                            <div className='grid gap-4 py-6'>
+                              <input className='border border-solid border-gray w-full py-3 px-2 rounded-lg focus:border-blue-800 focus:outline-none  focus:border-2'  type="text" placeholder='Bright Igwe'/>
+                              <input  className='border border-solid border-gray w-full py-3 px-2 rounded-lg focus:border-blue-800 focus:outline-none  focus:border-2'type="text" placeholder='Enter username'/>
+                            </div>
+
+                            <div className='grid gap-4 pb-6'>
+                              <input className='border border-solid border-gray w-full py-3 px-2 rounded-lg focus:border-blue-800 focus:outline-none  focus:border-2' type="text" placeholder='Job Title'/>
+                              <input className='border border-solid border-gray w-full py-3 px-2 rounded-lg focus:border-blue-800 focus:outline-none  focus:border-2' type="text" placeholder='Enter number'/>
+                            </div>
+                            
+                            <div className='pb-6'>
+                            <input className='border border-solid border-gray h-10 py-3 px-2 rounded-lg focus:border-blue-800 focus:outline-none  focus:border-2' type="text" placeholder='Write about yourself in one or two sentence'/>
+                            </div>
+
+                        </form>
+
+                        <button className='px-10 py-3 text-white font-semibold text-md  bg-gradient-to-l from-purple-600 via-blue-700 to-blue-700 rounded-lg font-sans'>Update Profile</button> 
+                    
+                        </div>) : ''}
+
+                      {Bank===false ? '' : <div className='bg-white' >
+                          <h1 className='flex items-center text-blue-700 text-xl font-semibold cursor-pointer'> <span onClick={showBank} className='mr-6'><FaAngleRight/> </span> Bank Details</h1>
+                          <form action="">
+                            <div className='grid gap-10 mt-6 pb-6'>
+                                <div className='grid gap-2' >
+                                  <label className='text-lg text-bold' htmlFor="">Bank Name</label>
+                                  <input className='border border-solid border-gray px-2 py-2 text-bold rounded-lg' type="text" placeholder='Enter Bank name' />
+                                </div>
+                                <div className='grid gap-2 '>
+                                  <label className='text-lg text-bold' htmlFor="">Account Number</label>
+                                  <input className='border border-solid border-gray px-2 py-2 text-bold rounded-lg' type="text" placeholder='Enter Account Number' />
+                                </div>
+                                <div className='grid gap-2 '>
+                                  <label className='text-lg text-bold' htmlFor="">Account Name</label>
+                                  <input className='border border-solid border-gray px-2 py-2 text-bold rounded-lg' type="text" placeholder='Enter Account Name' />
+                                </div>
+
+                            </div>
+
+                          </form>
+                          </div> }  
+                </div>  
+                  
+                </div> 
+
+
+
+      </section> : ''}
 
                
 
