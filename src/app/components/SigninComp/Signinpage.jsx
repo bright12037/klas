@@ -36,7 +36,7 @@ const Signinpage = () => {
 
   return (
     <div>
-        <div className='flex fixed'>
+        <div className='flex fixed h-full'>
             <div className='px-24 py-3 bg-blue-800'>
                 <Image src={slide1} alt='' />
 
