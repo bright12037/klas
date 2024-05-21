@@ -75,9 +75,9 @@ const CompanyTop = () => {
         </div>
 
         <div className='flex items-center gap-3 justify-center mt-32'>
-            <Image className='h-full w-full ' src={img1} />
-            <Image className='h-full w-full ' src={img2} />
-            <Image className='h-full w-full ' src={img3} />
+            <Image className='h-full w-full ' src={img1} alt='s' />
+            <Image className='h-full w-full ' src={img2} alt='s' />
+            <Image className='h-full w-full ' src={img3} alt='s' />
         </div>
 
         <div className='flex items-center justify-center gap-20 my-24'>
@@ -107,22 +107,22 @@ const CompanyTop = () => {
 
             <div className='flex items-center gap-3 justify-center'>
                 <div>
-                    <Image src={img4} />
+                    <Image src={img4} alt='s' />
                     <p className='text-2xl font-semibold pt-6'>Fun</p>
                 </div>
 
                 <div>
-                <Image src={img5} />
+                <Image src={img5} alt='s' />
                 <p className='text-2xl font-semibold pt-6'>Collaborative</p>
                 </div>
 
                 <div>
-                <Image src={img6} />
+                <Image src={img6} alt='s' />
                 <p className='text-2xl font-semibold pt-6'>Borderless</p>
                 </div>
 
                 <div>
-                <Image src={img7} />
+                <Image src={img7} alt='s' />
                 <p className='text-2xl font-semibold pt-6'>Communtiy Driven</p>
                 </div>
             </div>
