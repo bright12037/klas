@@ -145,7 +145,7 @@ const CompanyTop = () => {
 
                 <div  onMouseEnter={showHover3} onMouseLeave={notshowHover3}  className='relative border-solid border-gray-500 border-b py-4'>
                     <p className='flex items-center text-lg font-semibold'>How much does it cost to use Klas?<span className='ml-auto'>{Hover3===false ? (<FaAngleDown/>) : (<FaAngleUp/>)}</span></p>
-                    {Hover3===false ? '' :(<p className='text-gray-600 text-md font-semibold py-2 px-6'> It's completely free to use. You can opt for our
+                    {Hover3===false ? '' :(<p className='text-gray-600 text-md font-semibold py-2 px-6'> Its completely free to use. You can opt for our
                     paid plans: Klas Pro or Klas Enterprise. Check out our pricing page.</p>)}
                 </div>
 
