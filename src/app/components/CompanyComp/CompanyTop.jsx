@@ -11,6 +11,10 @@ import img4 from './images/c1.svg'
 import img5 from './images/c2.svg'
 import img6 from './images/c3.svg'
 import img7 from './images/c4.svg'
+import img8 from './images/disrupt.svg'
+import img9 from './images/edtech.svg'
+import img10 from './images/nairametrics.svg'
+import img11 from './images/techcabal.svg'
 
 import { FaAngleDown } from "react-icons/fa6";
 import { FaAngleUp } from 'react-icons/fa'
@@ -171,6 +175,17 @@ const CompanyTop = () => {
                    class ends, you can then either download the class recording immediately or if the file is too big,
                     you can auto-upload the class recording to YouTube.</p>)}
                 </div>
+            </div>
+        </div>
+
+        <div>
+            <h1 className='text-5xl mx-44 font-semibold text-center py-24'>As featured in</h1>
+
+            <div className='flex items-center gap-12 justify-center'>
+                <Image src={img8} />
+                <Image src={img9} />
+                <Image src={img10} />
+                <Image src={img11} />
             </div>
         </div>
     </div>
