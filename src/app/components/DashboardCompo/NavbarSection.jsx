@@ -116,7 +116,7 @@ const NavbarSection = () => {
           </div>
           <div className='ml-auto flex items-center gap-4'>
             <p className='text-blue-700 boder-solid border py-3 px-8 rounded-lg border-blue-700 cursor-pointer'>Try Pro</p>
-            <p className='px-10 py-3  bg-gradient-to-l from-purple-600 via-blue-700 to-blue-700 rounded-lg font-sans cursor-pointer'>Create a content</p>
+            <Link href="./createsection"> <p className='px-10 py-3  bg-gradient-to-l from-purple-600 via-blue-700 to-blue-700 rounded-lg font-sans cursor-pointer'>Create a content</p></Link>
             <Image className='rounded-full h-10 w-10 lg:h-12 lg:w-12 cursor-pointer' src={profile} />
           </div>
       </nav>

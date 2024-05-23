@@ -3,6 +3,7 @@ import React from 'react'
 import Image from 'next/image'
 import { useState } from 'react'
 import './Company.css'
+import Link from 'next/link'
 
 import img1 from './images/d1.svg'
 import img2 from './images/d2.svg'
@@ -18,6 +19,10 @@ import img11 from './images/techcabal.svg'
 
 import { FaAngleDown } from "react-icons/fa6";
 import { FaAngleUp } from 'react-icons/fa'
+import { RiInstagramFill } from "react-icons/ri";
+import { FaTwitter } from "react-icons/fa";
+import { SiLinkedin } from "react-icons/si";
+import { FaRegCopyright } from "react-icons/fa";
 
 const CompanyTop = () => {
     const[Hover1, setHover1] = useState(false)
@@ -73,6 +78,24 @@ const CompanyTop = () => {
 
   return (
     <div className='font-sans mx-16'>
+        {/*<Navbar />*/}
+        <nav className='flex bg-white mt-10 pt-5 pb-5 mb-16 align-center text-center rounded-xl shadow-md'>
+          <div className='pl-5 pt-2 text-2xl font-bold ml-5'> 
+             <h2>Klas</h2>
+          </div>
+          <div className='flex ml-auto gap-10 pt-3'>
+             <p className='hover:text-blue-700 hover:cursor-pointer'>Home</p>
+             <Link href="./pricing"><p className='hover:text-blue-700 hover:cursor-pointer'>Pricing</p></Link>
+             <Link href="./companypage"><p className='hover:text-blue-700 hover:cursor-pointer'>Company</p></Link> 
+             <p className='hover:text-blue-700 hover:cursor-pointer'>Case Studies</p>
+             <Link href="./blog"><p className='hover:text-blue-700 hover:cursor-pointer'>Blog</p></Link> 
+          </div>
+          <div className='flex items-center gap-3 ml-auto pr-10 '>
+            <Link href="./signuppage"> <button className='text-blue-600 font-semibold mr-3'>Login</button></Link>
+            <Link href="./signinpage"> <button className='bg-blue-600 text-white py-3 px-5 rounded-lg'>Sign up free</button></Link>
+          </div>
+        </nav>
+
         <div className='text-center'>
             <h1 className='text-6xl font-semibold pb-10'> Empowering everyone to teach online</h1>
             <p className='text-2xl text-gray-500 font-semibold px-2'>Launched in 2022, Klas is on a mission to empower everyone to teach engaging online <br /> classes.</p>
@@ -188,6 +211,36 @@ const CompanyTop = () => {
                 <Image src={img11} />
             </div>
         </div>
+
+             {/*<footer />*/}
+      <div className='bg-blue-700 mt-20'>
+        <div className='flex pt-10'>
+          <div className='ml-24'>
+           <h2 className='text-2xl font-semibold text-white'>Klas</h2>
+          </div>
+
+          <div className='flex gap-8 items-center align-center ml-auto mr-28'>
+            < RiInstagramFill className='text-2xl text-white'/>
+            < FaTwitter className='text-2xl text-white'/>
+            < SiLinkedin className='text-xl text-white'/>
+          </div>
+        </div>
+
+        <div className='flex gap-5 text-center justify-center align-center pt-20'>
+          <p className='text-white text-sm hover:text-gray-300 hover:cursor-pointer'>Home</p>
+           <Link href="./pricing"> <p className='text-white text-sm hover:text-gray-300 hover:cursor-pointer'>Pricing</p></Link>
+          <p className='text-white text-sm hover:text-gray-300 hover:cursor-pointer'>Company</p>
+          <p className='text-white text-sm hover:text-gray-300 hover:cursor-pointer'>Case Studies</p>
+          <p className='text-white text-sm hover:text-gray-300 hover:cursor-pointer'>Products</p>
+          <p className='text-white text-sm hover:text-gray-300 hover:cursor-pointer'>Terms of Use</p>
+          <p className='text-white text-sm hover:text-gray-300 hover:cursor-pointer'>Privacy Policy</p>
+        </div>
+
+        <div className='flex gap-1 text-center justify-center align-center pt-10 pb-10'>
+          <p className='text-gray-300 text-xs pt-1'><FaRegCopyright  /></p>
+          <p className='text-sm text-gray-300 '> Klas Global, Inc.</p>
+        </div>
+      </div>
     </div>
   )
 }

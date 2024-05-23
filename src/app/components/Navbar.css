@@ -1,0 +1,12 @@
+
+.pointer{
+    position: fixed;
+    top: 90vh;
+    right: 40px;
+    font-size: 20px;
+    color: white;
+    background-color: blue;
+    box-shadow: solid blue 1px ;
+    padding: 10px;
+    
+}
